@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Vue Js - HelloWorld App</title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+
+ <link rel="stylesheet" href="styles.css">
+
+ <link href='https://unpkg.com/tailwindcss@%5E2/dist/tailwind.min.css%27%3E'>
+
+ <script src ='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js%27%3E'></script>
+ 
+ <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+
+ <link href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css" rel="stylesheet" />
+  
+</head>
+
+<body>
+    <div id="app">
+        <div class="flex container mx-auto mt-10 border rounded-lg w-1/2">
+        
+        <div class="w-1/2 ">
+            <a v-bind:href="url"><img v-bind:src="image"  width="250" class="rounded-full mt-10 mx-auto" ></a>
+            
+            <div class=" mx-10 mt-10" >
+                <div class="p-3">
+                    <a class="text-xl font-bold " v-bind:href="url">{{name}}</a> <span class="text-gray-600">{{career}}</span>
+                </div>
+                <div class="flex justify-between items-center p-4 bg-gray-100 rounded-lg mt-3">
+                    <div class="mr-3 flex flex-col"> 
+                        <span class="text-gray-400 block">Posts</span> 
+                        <span class="font-bold text-black text-xl ml-2">13</span> </div>
+                    <div class="mr-3 flex flex-col"> 
+                        <span class="text-gray-400 block">Followers</span> 
+                        <span class="font-bold text-black text-xl ml-4">747</span> </div>
+                    <div class="mr-3 flex flex-col"> 
+                        <span class="text-gray-400 block">Followering</span> 
+                        <span class="font-bold text-black text-xl ml-4">503</span> 
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+        <div class="w-1/2">
+        <form @submit.prevent="checkProfile">
+          <div class="p-8  border rounded-lg ">
+              <h1 class="text-2xl pt-4 pb-4 font-medium">Instagram</h1>
+
+              <div class="flex-row">
+                  <div class="flex flex-col">
+                      <label for="firstname" class="text-sm leading-7 text-gray-600">Firstname</label>
+                      <input type="text" id="firstname" v-model="firstname" name="firstname" Placeholder="Firstname" class="bg-gray-100 rounded px-4 py-2 mb-4 ">
+                      <span v-if="errors.firstname" class="flex items-center font-medium tracking-wide text-red-500 text-xs mb-5">
+                        {{this.errors.firstname[0]}}
+                     </span>
+                  </div>
+                  <div class="flex flex-col">
+                      <label for="lastname" class="text-sm leading-7 text-gray-600">Lastname</label>
+                      <input type="text" id="lastname" v-model="lastname" name="lastname" Placeholder="Lastname" class="bg-gray-100 rounded px-4 py-2 mb-4 ">
+                      <span v-if="errors.lastname" class="flex items-center font-medium tracking-wide text-red-500 text-xs mb-5">
+                        {{this.errors.lastname[0]}}
+                     </span>
+                  </div>
+                  <div class="flex flex-col">
+                      <label for="email" class="text-sm leading-7 text-gray-600">Email</label>
+                      <input type="text" id="email" v-model="email" name="email" Placeholder="Email Address" class="bg-gray-100 rounded px-4 py-2 mb-4 ">
+                      <span v-if="errors.email" class="flex items-center font-medium tracking-wide text-red-500 text-xs mb-5">
+                        {{this.errors.email[0]}}
+                     </span>
+                  </div>
+                  <div class="flex flex-col">
+                      <label for="phone"class="text-sm leading-7 text-gray-600">Phone Number</label>
+                      <input type="text" id="phone" v-model="phone" name="phone" Placeholder="Phone" class="bg-gray-100 rounded px-4 py-2 mb-4 ">
+                      <span v-if="errors.phone" class="flex items-center font-medium tracking-wide text-red-500 text-xs mb-5">
+                        {{this.errors.phone[0]}}
+                     </span>
+                  </div>
+                  <div class="flex justify-center">
+                    <div class="mt-5 mx-auto">
+                        <input type="submit" value="Submit" class=" px-8 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
+                    </div>
+                    <div class="mt-5 mx-auto">
+                        <input type="reset" value="Cancel" class=" px-8 py-2 text-white bg-red-500 rounded-lg hover:bg-red-600 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
+                    </div>
+                  </div>
+                  
+              </div>
+          </div>                            
+        </form>
+        </div>
+    </div>
+    </div>
+
+ 
+
+  <!-- my main.js -->
+  <script src="./profile.js"></script>
+</body>
+
+</html>
